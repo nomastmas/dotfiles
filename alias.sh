@@ -9,6 +9,7 @@ alias sshjenkinsqa="ssh tech-jenkins-qa.2u.com"
 
 # ls aliases
 alias ls='ls -lGFh'
+alias ll='ls -l'
 alias la='ls -la'
 
 alias ip='ifconfig en0 | grep inet'
