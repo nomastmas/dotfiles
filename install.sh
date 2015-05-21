@@ -11,12 +11,13 @@ git stash pop
 rm -f ~/.alias
 #rm -f ~/.git-completion.sh
 rm -f ~/.mybashrc
+rm -f ~/.bash_profile
 rm -f ~/.vimrc
 rm -rf ~/.vim
 
 # Link config files in home folder
-ln -sf ./dotfiles/alias.sh ~/.alias
+ln -sf $PWD/alias.sh ~/.alias
+ln -sf $PWD/bash_profile.bash ~/.bash_profile
+ln -sf $PWD/vimrc ~/.vimrc
+ln -sf $PWD/vim ~/.vim
 #ln -sf ~/dotfiles/sh/git-completion.sh ~/.git-completion.sh
-ln -sf ./dotfiles/bash_profile.bash ./.bash_profile
-ln -sf ./dotfiles/vimrc ./.vimrc
-ln -sf ./dotfiles/vim ./.vim
