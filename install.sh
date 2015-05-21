@@ -15,8 +15,8 @@ rm -f ~/.vimrc
 rm -rf ~/.vim
 
 # Link config files in home folder
-ln -sf ~/dotfiles/alias.sh ~/.alias
+ln -sf ./dotfiles/alias.sh ~/.alias
 #ln -sf ~/dotfiles/sh/git-completion.sh ~/.git-completion.sh
-ln -sf ~/dotfiles/bash_profile.bash ~/.bash_profile
-ln -sf ~/dotfiles/vimrc ~/.vimrc
-ln -sf ~/dotfiles/vim ~/.vim
+ln -sf ./dotfiles/bash_profile.bash ./.bash_profile
+ln -sf ./dotfiles/vimrc ./.vimrc
+ln -sf ./dotfiles/vim ./.vim
