@@ -4,8 +4,8 @@
 alias tmux="TERM=screen-256color-bce tmux"
 
 # SSH aliases
-alias sshtech="ssh tech-sandbox-dev.2u.com"
-alias sshjenkinsqa="ssh tech-jenkins-qa.2u.com"
+alias sshtech="ssh tech-sandbox-dev.2u.com -A"
+alias sshjenkinsqa="ssh tech-jenkins-qa.2u.com -A"
 
 # ls aliases
 alias ls='ls -lGFh'
