@@ -30,3 +30,6 @@ bind-key l select-pane -R
 
 # for syntax coloring in vim
 set -g default-terminal "xterm"
+
+# update environment for ssh
+set -g update-environment -r

@@ -3,7 +3,9 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
@@ -20,6 +22,10 @@ Plugin 'scrooloose/syntastic'
 Plugin 'neocomplcache'
 " More python syntax
 "Plugin 'Python-Syntax'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 
 """""""""" Plugins configuration """""""
@@ -61,9 +67,6 @@ let g:syntastic_always_populate_loc_list = 1
 " check for errors on open
 let g:syntastic_check_on_open = 1
 """"""""""""""""""""""""""""""""""""""""""""
-
-" required!
-filetype plugin indent on
 
 " color scheme
 set t_Co=256
@@ -148,6 +151,15 @@ set hlsearch
 
 " soft word wrap
 set wrap linebreak nolist
+
+" backspace over anything in insert mode
+set backspace=indent,eol,start
+
+" folding
+" automatically indent by fold level
+set foldmethod=indent
+" but have folds open by default
+set nofoldenable
 
 " load neocomplcache settings
 source ~/.vim/.neocomplcache.vim
