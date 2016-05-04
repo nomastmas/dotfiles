@@ -22,6 +22,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'neocomplcache'
 " More python syntax
 "Plugin 'Python-Syntax'
+" Display spaces and tabs
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -88,8 +90,8 @@ set history=50
 set title
 
 " visual whitespace
-"set list
-"set listchars=tab:>.
+set list
+set listchars=tab:>·,trail:·,eol:$
 
 " showmatch: show the matching bracket for the last '?'
 set showmatch

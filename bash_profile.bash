@@ -41,7 +41,7 @@ export PAGER=less
 # stuff goes foobar on the zsh prompt etc.
 if [ -z "$SSH_TTY" ]; then
         export TERM=xterm
-        export TMOUT=300
+        export TMOUT=0
     elif [ -z "$TMUX" ]; then
         # Give us a chance not to go into tmux.
         /usr/local/bin/count_to_three
