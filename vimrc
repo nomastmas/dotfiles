@@ -1,15 +1,67 @@
-"for Vundle
-set nocompatible               " be iMproved
-filetype off                   " required!
+" general
+set history=10000                       " record millennia of commands
+set autoread                            " reload file when changed externally
+set nocompatible                        " enables non vi compatible features
+set modeline                            " enable modeline support
+
+set nobackup                            " no back ups after close
+set nowritebackup                       " no back ups while writing
+set noswapfile                          " no swp file
+
+set undodir=~/.vim/backups              " keep undo history across session
+set undofile                            " save undo history to file
+
+
+" UI
+colorscheme molokai_custom
+set number                              " line numbers
+set wildmenu                            " tab completion for menu
+set wildmode=longest,list,full
+set wildcharm=<TAB>                     " autocompletion hotkey
+set ch=2                                " command line height
+set backspace=indent,eol,start          " backspace over anything in insert mode
+set t_Co=256                            " use 256 colors
+set laststatus=2                        " always status line
+set shortmess=a                         " reduce length of messages
+set whichwrap=<,>,h,l,[,]               " allow keys to cross line boundries
+
+
+" tabs and spaces
+set tabstop=4                           " 4 space tabs
+set expandtab                           " use tabs for space
+set shiftwidth=4
+filetype indent on                      " filetype indenting
+set autoindent
+set smarttab
+set cindent
+set cinkeys-=0#                         " for indenting comments
+
+
+" visual
+set nostartofline                       " prevent cursor from changing column when jumping lines
+set cursorline                          " highlight line with cursor
+set list lcs=tab:>·,trail:·,eol:$       " visualize spaces and tabs
+set showmatch                           " highlight brackets and braces
+set matchpairs+=<:>                     " highlight < and > as well
+set ignorecase                          " ignore case when searching
+set incsearch                           " incremental search
+set visualbell                          " no beeping
+set scrolloff=5                         " buffer 5 lines of current line when scrolling
+set hlsearch                            " highlight searches
+set wrap linebreak nolist               " soft word wrap
+set noeol                               " no eol at end of file
+set title                               " title of window 
+syntax on
+
+" vundle
+filetype off                            " required!
 
 set rtp+=~/.vim/bundle/vundle/
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle manage Vundle
-" required! 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/vundle'                  " required! let vundle manage vundle
 " Browsing filesystem in tree-like manner
 Plugin 'scrooloose/nerdtree'
 " Git support from Vim
@@ -70,98 +122,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 """"""""""""""""""""""""""""""""""""""""""""
 
-" color scheme
-set t_Co=256
-colorscheme molokai_custom
 
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-" file type specific indenting
-filetype indent on
-set autoindent
-set smarttab
-set cindent
-" for indenting comments
-set cinkeys-=0#
-
-set history=50
-set title
-
-" visual whitespace
-set list
-set listchars=tab:>·,trail:·,eol:$
-
-" showmatch: show the matching bracket for the last '?'
-set showmatch
-
-syntax on
-set number
-
-" tab complete
-set wildmode=longest,list,full
-set wildmenu
-" autocompletion hotkey
-set wildcharm=<TAB>
-
-" The cursor should stay where you leave it, instead of moving to the first
-" non blank of the line
-set nostartofline
-
-" Highlight line with cursor
-set cursorline
-
-" Show matching brackets
-set showmatch
-
-" Make < and > match as well
-set matchpairs+=<:>
-
-" Live search. While typing a search command, show where the pattern
-set incsearch
-
-" vim will leave 5 lines top and bottom of current line when scrolling
-set scrolloff=5
-
-" Numbers of columns to keep to the left and to the right off the screen
-set sidescrolloff=10
-
-" ruler at column
-"set colorcolumn=80
-"highlight ColorColumn ctermbg=red
-
-" Setting up right-hand section(ruller) format
-"set rulerformat=%30(%=\:%y%m%r%w\ %l,%c%V\ %P%)
-
-" Disable backups file
-set nobackup
-
-" Disable vim common sequense for saving.
-" By defalut vim write buffer to a new file, then delete original file
-" then rename the new file.
-set nowritebackup
-
-" Disable swp files
-set noswapfile
-
-" Do not add eol at the end of file.
-set noeol
-
-" highlight searches
-set hlsearch
-
-" soft word wrap
-set wrap linebreak nolist
-
-" backspace over anything in insert mode
-set backspace=indent,eol,start
-
-" folding
-" automatically indent by fold level
-set foldmethod=indent
-" but have folds open by default
-set nofoldenable
 
 " load neocomplcache settings
 source ~/.vim/.neocomplcache.vim
