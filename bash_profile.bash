@@ -9,7 +9,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+    . ~/.git-completion.bash
 fi
 
 # ensure user libs take precedence
