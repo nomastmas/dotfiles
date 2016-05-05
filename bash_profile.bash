@@ -8,6 +8,10 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 # ensure user libs take precedence
 export PATH="/usr/local/bin:/usr/local/mysql/bin:/usr/local/sbin:~/bin:$PATH"
 
@@ -22,13 +26,8 @@ export PS1="[$PERSON@$PLACE:$CWD]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-[[ -s /Users/thomaswtsang/.nvm/nvm.sh ]] && . /Users/thomaswtsang/.nvm/nvm.sh  # This loads NVM
-
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
-
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 export EDITOR=vim
 export PAGER=less
