@@ -1,15 +1,7 @@
 #!/bin/sh
 
-# Update repository
-git stash &&
-git pull --rebase &&
-git submodule init &&
-git submodule update &&
-git stash pop
-
 # Remove config file links in home folder
 rm -f ~/.alias
-#rm -f ~/.git-completion.sh
 rm -f ~/.mybashrc
 rm -f ~/.bash_profile
 rm -f ~/.vimrc
@@ -23,4 +15,8 @@ ln -sf $PWD/vimrc ~/.vimrc
 ln -sf $PWD/vim ~/.vim
 ln -sf $PWD/tmux_conf.sh ~/.tmux.conf
 
-#ln -sf ~/dotfiles/sh/git-completion.sh ~/.git-completion.sh
+# Setup Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Install Plugins
+vim +PluginInstall +qall
