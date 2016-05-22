@@ -13,3 +13,6 @@ alias ll='ls -l'
 alias la='ls -la'
 
 alias ip='ifconfig en0 | grep inet'
+
+# python
+alias activate="source env/bin/activate"
