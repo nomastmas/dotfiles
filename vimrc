@@ -62,23 +62,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle'                  " required! let vundle manage vundle
-" Browsing filesystem in tree-like manner
-Plugin 'scrooloose/nerdtree'
-" Git support from Vim
-"Plugin 'tpope/vim-fugitive'
-" Fancy status bar which is more informative and customizable than standard
-Plugin 'bling/vim-airline'
-" Syntax checker, also need pip install flake8
-Plugin 'scrooloose/syntastic'
-" Autocomplete
-Plugin 'neocomplcache'
-" More python syntax
-"Plugin 'Python-Syntax'
-" Display spaces and tabs
-Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/nerdtree'            " browse filesystem in tree manner
+Plugin 'vim-airline/vim-airline'        " fancy status bar
+Plugin 'vim-airline/vim-airline-themes' " themes for fancy status bar
+Plugin 'scrooloose/syntastic'           " syntax checker
+Plugin 'neocomplcache'                  " autocomplete
+Plugin 'Yggdroot/indentLine'            " display spaces and tabs
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call vundle#end()            " plugins must be added before this line
 filetype plugin indent on    " required
 
 
@@ -104,13 +95,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dark'
 " for responsiveness
 set ttimeoutlen=50
-" for having airline appear on single window
-set laststatus=2
 
-let g:airline_left_sep = ''
-"let g:airline_left_sep = '▶'
-let g:airline_right_sep = ''
-"let g:airline_right_sep = '◀'
 """"""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""
