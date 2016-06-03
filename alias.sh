@@ -13,3 +13,5 @@ alias ll='ls -l'
 alias la='ls -la'
 
 alias ip='ifconfig en0 | grep inet'
+
+alias activate='. env/bin/activate'
