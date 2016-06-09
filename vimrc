@@ -53,7 +53,9 @@ set noeol                               " no eol at end of file
 set title                               " title of window 
 syntax on
 
-" vundle
+" Plugin Configs
+
+" Vundle
 filetype off                            " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -62,9 +64,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle'                  " required! let vundle manage vundle
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'scrooloose/nerdtree'            " browse filesystem in tree manner
-Plugin 'vim-airline/vim-airline'        " fancy status bar
-Plugin 'vim-airline/vim-airline-themes' " themes for fancy status bar
 Plugin 'scrooloose/syntastic'           " syntax checker
 Plugin 'neocomplcache'                  " autocomplete
 Plugin 'Yggdroot/indentLine'            " display spaces and tabs
@@ -72,42 +73,13 @@ Plugin 'Yggdroot/indentLine'            " display spaces and tabs
 call vundle#end()            " plugins must be added before this line
 filetype plugin indent on    " required
 
-
-"""""""""" Plugins configuration """""""
-" NERDTree configuration
-" set current dirrectory to recently opened buffer
-" !!!WARNING!!! THIS BREAKS SEVERAL FUGUTIVE.vim COMMANDS!!! 
-" autocmd BufEnter * lcd %:p:h
-
-" open a NERDTree automatically when vim starts up if no files were
-" specified
-"autocmd VimEnter * NERDTree
-" go to previous window
-"autocmd VimEnter * wincmd p
-
+" NERDTree
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-""""""""""""""""""""""""""""""""""""""""""
-" Airline configuration 
 
-" Need this to enable plugin
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='dark'
-" for responsiveness
-set ttimeoutlen=50
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1 " automatically load errors into location list
+let g:syntastic_check_on_open = 1       " check for errors on open
 
-""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic configuration
-
-" automatically load errors into location list
-let g:syntastic_always_populate_loc_list = 1
-" check for errors on open
-let g:syntastic_check_on_open = 1
-""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-" load neocomplcache settings
+" Neocomplcache
 source ~/.vim/.neocomplcache.vim
