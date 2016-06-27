@@ -15,11 +15,17 @@ fi
 # ensure user libs take precedence
 export PATH="/usr/local/bin:/usr/local/mysql/bin:/usr/local/sbin:~/bin:$PATH"
 
-#export PS1="\h:\W \u\$"
-PERSON="\u"
-PLACE="\h"
-CWD="\w"
-export PS1="[$PERSON@$PLACE:$CWD]\$ "
+# powerline
+# powerline-daemon -q
+# POWERLINE_BASH_CONTINUATION=1
+# POWERLINE_BASH_SELECT=1
+. /Users/ttsang/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+
+# #export PS1="\h:\W \u\$"
+# PERSON="\u"
+# PLACE="\h"
+# CWD="\w"
+# export PS1="[$PERSON@$PLACE:$CWD]\$ "
 
 # enable colorized output for ls
 # http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/ for more customization
