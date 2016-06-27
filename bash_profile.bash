@@ -61,3 +61,7 @@ if [ -z "$SSH_TTY" ]; then
         # start tmux
         exec tmux -u attach -d
 fi
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi
