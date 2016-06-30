@@ -12,3 +12,8 @@ alias ip='ifconfig en0 | grep inet'
 
 # python
 alias activate="source env/bin/activate"
+
+function venv(){
+    virtualenv --prompt="($1)" env
+    activate
+}
