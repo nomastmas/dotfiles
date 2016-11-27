@@ -13,6 +13,19 @@ alias ip='ifconfig en0 | grep inet'
 # python
 alias activate="source env/bin/activate"
 
+# docker
+alias dco='docker-compose'
+alias doc='docker'
+
+# git
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+
+# tmuxinator
+alias mux="tmuxinator"
+
 function venv(){
     virtualenv --prompt="($1)" env
     activate
