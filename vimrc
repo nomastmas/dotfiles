@@ -15,6 +15,7 @@ set undofile                            " save undo history to file
 " UI
 colorscheme molokai_custom
 set number                              " line numbers
+set relativenumber                      " show relative number
 set wildmenu                            " tab completion for menu
 set wildmode=longest,list,full
 set wildcharm=<TAB>                     " autocompletion hotkey
