@@ -26,6 +26,10 @@ git config --global alias.st status
 # tmuxinator
 alias mux="tmuxinator"
 
+# git
+alias gg="git log --oneline --all --graph --color --decorate --abbrev-commit"
+
+# virtualenv
 function venv(){
     virtualenv --prompt="($1)" env
     activate
