@@ -16,6 +16,7 @@ ln -sf $PWD/vim ~/.vim
 ln -sf $PWD/tmux_conf.sh ~/.tmux.conf
 ln -sf $PWD/git-completion.bash ~/.git-completion.bash
 ln -sf $PWD/bash_profile.bash ~/.bash_profile
+ln -sf $PWD/work.sh ~/.work
 
 # Setup powerline fonts
 cd ~/dev; git clone https://github.com/powerline/fonts.git; cd fonts; ./install.sh
