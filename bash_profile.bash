@@ -4,6 +4,10 @@ if [ -f ~/.alias ]; then
    . ~/.alias
 fi
 
+if [ -f ~/.work ]; then
+   . ~/.work
+fi
+
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
@@ -12,20 +16,27 @@ if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
 
+if [ -f ~/.bin/tmuxinator.bash ]; then
+    . ~/.bin/tmuxinator.bash
+fi
+
 # ensure user libs take precedence
 export PATH="/usr/local/bin:/usr/local/mysql/bin:/usr/local/sbin:~/bin:$PATH"
+
+# point to java
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 # powerline
 # powerline-daemon -q
 # POWERLINE_BASH_CONTINUATION=1
 # POWERLINE_BASH_SELECT=1
-. /Users/ttsang/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
+# . /Users/ttsang/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
 
 # #export PS1="\h:\W \u\$"
-# PERSON="\u"
-# PLACE="\h"
-# CWD="\w"
-# export PS1="[$PERSON@$PLACE:$CWD]\$ "
+PERSON="\u"
+PLACE="\h"
+CWD="\w"
+export PS1="[$PERSON@$PLACE:$CWD]\$ "
 
 # enable colorized output for ls
 # http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/ for more customization
