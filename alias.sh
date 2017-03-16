@@ -12,6 +12,8 @@ alias ip='ifconfig en0 | grep inet'
 
 # python
 alias activate="source env/bin/activate"
+alias python="python3"
+alias pip="pip3"
 
 # docker
 alias dco='docker-compose'
