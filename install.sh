@@ -18,12 +18,8 @@ ln -sf $PWD/git-completion.bash ~/.git-completion.bash
 ln -sf $PWD/bash_profile.bash ~/.bash_profile
 ln -sf $PWD/work.sh ~/.work
 
-# Setup powerline fonts
-cd ~/dev; git clone https://github.com/powerline/fonts.git; cd fonts; ./install.sh
-
-# Setup powerline
-virtualenv -q --prompt="(dot)" env
-env/bin/pip install -q powerline-status
-
 # Install Plugins
+if [ -d "~/.vim/bundle/Vundle.vim/" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 vim +PluginInstall +qall
