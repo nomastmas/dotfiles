@@ -1,23 +1,14 @@
 #!/usr/bin/sh
 
-klondike_health(){
-    domain=$1
-    echo "curl https://$domain-api-stg.2u.com/prospects/health"
-    curl https://$domain-api-stg.2u.com/prospects/health
-    echo ""
+source /Users/ttsang/.rvm/scripts/rvm
+
+function get_repo () {
+  git clone git@github.com:thomaswtsang/$1.git
+  cd $1
+  git remote add orchard git@github.com:theorchard/$1.git
+  git remote set-url --push orchard cant_touch_this
 }
 
-greenlight_health(){
-    domain=$1
-    echo "curl https://$domain-api-stg.2u.com/accounts/health"
-    curl https://$domain-api-stg.2u.com/accounts/health
-    echo ""
-}
-
-klondike_verify(){
-    domain=$1
-    degree_offering=$2
-    uuid=$3
-    echo "curl https://$domain-api-stg.2u.com/prospects/$degree_offering/$uuid/tasks"
-    curl https://$domain-api-stg.2u.com/prospects/$degree_offering/$uuid/tasks
+function pyclean() {
+  find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
 }
