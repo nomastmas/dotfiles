@@ -54,33 +54,33 @@ set noeol                               " no eol at end of file
 set title                               " title of window 
 syntax on
 
-" Plugin Configs
-
-" Vundle
-filetype off                            " required!
-
-set rtp+=~/.vim/bundle/vundle/
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/vundle'                  " required! let vundle manage vundle
-Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'scrooloose/nerdtree'            " browse filesystem in tree manner
-Plugin 'scrooloose/syntastic'           " syntax checker
-Plugin 'neocomplcache'                  " autocomplete
-Plugin 'Yggdroot/indentLine'            " display spaces and tabs
-
-call vundle#end()            " plugins must be added before this line
-filetype plugin indent on    " required
-
-" NERDTree
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1 " automatically load errors into location list
-let g:syntastic_check_on_open = 1       " check for errors on open
-
-" Neocomplcache
-source ~/.vim/.neocomplcache.vim
+" " Plugin Configs
+" 
+" " Vundle
+" filetype off                            " required!
+" 
+" set rtp+=~/.vim/bundle/vundle/
+" " set the runtime path to include Vundle and initialize
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" 
+" Plugin 'gmarik/vundle'                  " required! let vundle manage vundle
+" Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'scrooloose/nerdtree'            " browse filesystem in tree manner
+" Plugin 'scrooloose/syntastic'           " syntax checker
+" Plugin 'neocomplcache'                  " autocomplete
+" Plugin 'Yggdroot/indentLine'            " display spaces and tabs
+" 
+" call vundle#end()            " plugins must be added before this line
+" filetype plugin indent on    " required
+" 
+" " NERDTree
+" " close vim if the only window left open is a NERDTree
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" 
+" " Syntastic
+" let g:syntastic_always_populate_loc_list = 1 " automatically load errors into location list
+" let g:syntastic_check_on_open = 1       " check for errors on open
+" 
+" " Neocomplcache
+" source ~/.vim/.neocomplcache.vim
