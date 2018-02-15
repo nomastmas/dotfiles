@@ -23,15 +23,6 @@ fi
 # ensure user libs take precedence
 export PATH="/usr/local/bin:/usr/local/mysql/bin:/usr/local/sbin:~/bin:$PATH"
 
-# point to java
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-
-# powerline
-# powerline-daemon -q
-# POWERLINE_BASH_CONTINUATION=1
-# POWERLINE_BASH_SELECT=1
-# . /Users/ttsang/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh
-
 # #export PS1="\h:\W \u\$"
 PERSON="\u"
 PLACE="\h"
@@ -75,4 +66,10 @@ fi
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
+fi
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi
