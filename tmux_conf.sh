@@ -8,10 +8,28 @@ set -g set-titles-string '#(whoami)::#h::#(curl ipecho.net/plain;echo)'
 # Set base index
 set-window-option -g pane-base-index 1
 
-# Status bar customization
-set -g status-utf8 on
+# panes
+set -g pane-border-fg black
+set -g pane-active-border-fg brightred
+
+## Status bar design
+# status line
+set -g status-justify left
 set -g status-bg black
 set -g status-fg white
+set -g status-interval 2
+
+# messaging
+set -g message-fg black
+set -g message-bg yellow
+set -g message-command-fg blue
+set -g message-command-bg black
+
+#window mode
+setw -g mode-bg colour6
+setw -g mode-fg colour0
+
+# Status bar customization
 set -g status-interval 5
 set -g status-left-length 90
 set -g status-right-length 60
@@ -20,6 +38,37 @@ set -g status-left "#[fg=Green]#(whoami)#[fg=white]::#[fg=blue] \
 
 set -g status-justify left
 set -g status-right '#[fg=Cyan]#S #[fg=white]%a %d %b %R' 
+
+# window status
+setw -g window-status-format " #F#I:#W#F "
+setw -g window-status-current-format " #F#I:#W#F "
+setw -g window-status-format "#[fg=magenta]#[bg=black] #I #[bg=cyan]#[fg=colour8] #W "
+setw -g window-status-current-format "#[bg=brightmagenta]#[fg=colour8] #I #[fg=colour8]#[bg=colour14] #W "
+setw -g window-status-current-bg colour0
+setw -g window-status-current-fg colour11
+setw -g window-status-current-attr dim
+setw -g window-status-bg green
+setw -g window-status-fg black
+setw -g window-status-attr reverse
+
+set -g status-position bottom
+set -g status-bg colour234
+set -g status-fg colour137
+set -g status-attr dim
+set -g status-right '#[fg=colour233,bg=colour241,bold] %d/%m #[fg=colour233,bg=colour245,bold] %H:%M:%S '
+set -g status-right-length 50
+set -g status-left-length 20
+
+setw -g window-status-current-fg colour81
+setw -g window-status-current-bg colour238
+setw -g window-status-current-attr bold
+setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour50]#F '
+
+setw -g window-status-fg colour138
+setw -g window-status-bg colour235
+setw -g window-status-attr none
+setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
+
 
 # Remap window navigation to vim
 unbind-key j
