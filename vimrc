@@ -28,9 +28,9 @@ set whichwrap=<,>,h,l,[,]               " allow keys to cross line boundries
 
 
 " tabs and spaces
-set tabstop=4                           " 4 space tabs
+set tabstop=2                           " 2 space tabs
 set expandtab                           " use tabs for space
-set shiftwidth=4
+set shiftwidth=2
 filetype indent on                      " filetype indenting
 set autoindent
 set smarttab
@@ -52,28 +52,24 @@ set hlsearch                            " highlight searches
 set wrap linebreak nolist               " soft word wrap
 set noeol                               " no eol at end of file
 set title                               " title of window 
+set noshowmode                          " removes default mode indicator
 syntax on
 
 " Plugin Configs
 
-" Vundle
-filetype off                            " required!
-
-set rtp+=~/.vim/bundle/vundle/
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/vundle'                  " required! let vundle manage vundle
-Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'scrooloose/nerdtree'            " browse filesystem in tree manner
-Plugin 'scrooloose/syntastic'           " syntax checker
-Plugin 'neocomplcache'                  " autocomplete
-Plugin 'Yggdroot/indentLine'            " display spaces and tabs
-
-call vundle#end()            " plugins must be added before this line
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/neocomplete'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-endwise'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-cucumber'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rking/ag.vim'
+call plug#end()
 filetype plugin indent on    " required
-
 " NERDTree
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -82,5 +78,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:syntastic_always_populate_loc_list = 1 " automatically load errors into location list
 let g:syntastic_check_on_open = 1       " check for errors on open
 
-" Neocomplcache
-source ~/.vim/.neocomplcache.vim
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Vim Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='simple'
+
+" Indent Guides
+let g:indent_guides_enable_on_vim_startup = 1
