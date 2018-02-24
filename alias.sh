@@ -11,9 +11,7 @@ alias la='ls -la'
 alias ip='ifconfig en0 | grep inet'
 
 # python
-alias activate="source env/bin/activate"
-alias python="python3"
-alias pip="pip3"
+alias act="source env/bin/activate"
 
 # docker
 alias dco='docker-compose'
@@ -24,15 +22,17 @@ git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
+git config --global alias.l 'log --oneline --all --graph --color --decorate --abbrev-commit'
+git config --global alias.porch 'pull orchard master'
+git config --global alias.psh "push origin $(git rev-parse --abbrev-ref HEAD)"
+
+alias g='git'
 
 # tmuxinator
 alias mux="tmuxinator"
 
-# git
-alias gg="git log --oneline --all --graph --color --decorate --abbrev-commit"
-
 # virtualenv
 function venv(){
     virtualenv --prompt="($1)" env
-    activate
+    act
 }
