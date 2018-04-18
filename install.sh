@@ -18,8 +18,8 @@ ln -sf $PWD/git-completion.bash ~/.git-completion.bash
 ln -sf $PWD/bash_profile.bash ~/.bash_profile
 ln -sf $PWD/work.sh ~/.work
 
-# Install Plugins
-if [ -d "~/.vim/bundle/Vundle.vim/" ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-vim +PluginInstall +qall
+# # Install Plugins
+# if [ -d "~/.vim/bundle/Vundle.vim/" ]; then
+#     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# fi
+# vim +PluginInstall +qall

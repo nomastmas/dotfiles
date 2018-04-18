@@ -61,7 +61,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/neocomplete'
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-endwise'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-cucumber'
