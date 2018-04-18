@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x 
+
 # Remove config file links in home folder
 rm -f ~/.alias
 rm -f ~/.mybashrc
@@ -10,13 +12,13 @@ rm -rf ~/.vim
 rm -rf ~/.tmux.conf
 
 # Link config files in home folder
-ln -sf $PWD/alias.sh ~/.alias
-ln -sf $PWD/vimrc ~/.vimrc
-ln -sf $PWD/vim ~/.vim
-ln -sf $PWD/tmux_conf.sh ~/.tmux.conf
-ln -sf $PWD/git-completion.bash ~/.git-completion.bash
-ln -sf $PWD/bash_profile.bash ~/.bash_profile
-ln -sf $PWD/work.sh ~/.work
+cp -a $PWD/alias.sh ~/.alias
+cp -a $PWD/vimrc ~/.vimrc
+rsync -r $PWD/vim/ ~/.vim
+cp -a $PWD/tmux_conf.sh ~/.tmux.conf
+cp -a $PWD/git-completion.bash ~/.git-completion.bash
+cp -a $PWD/bash_profile.bash ~/.bash_profile
+cp -a $PWD/work.sh ~/.work
 
 # # Install Plugins
 # if [ -d "~/.vim/bundle/Vundle.vim/" ]; then
