@@ -20,7 +20,7 @@ cp -a $PWD/tmux_conf.sh ~/.tmux.conf
 cp -a $PWD/git-completion.bash ~/.git-completion.bash
 cp -a $PWD/bash_profile.bash ~/.bash_profile
 cp -a $PWD/work.sh ~/.work
-cp -a $PWD/zshrc ~/.zshrc
+cp -a $PWD/zsh/zshrc ~/.zshrc
 
 # Install Plugins
 if [ -d "~/.vim/bundle/Vundle.vim/" ]; then
