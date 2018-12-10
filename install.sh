@@ -2,24 +2,14 @@
 
 set -x 
 
-# Remove config file links in home folder
-rm -f ~/.alias
-rm -f ~/.mybashrc
-rm -f ~/.git-completion.bash
-rm -f ~/.bash_profile
-rm -f ~/.vimrc
-rm -f ~/.zshrc
-rm -rf ~/.vim
-rm -rf ~/.tmux.conf
-
 # Link config files in home folder
-cp -a $PWD/alias.sh ~/.alias
+cp -a $PWD/alias ~/.alias
 cp -a $PWD/vimrc ~/.vimrc
 rsync -r $PWD/vim/ ~/.vim
-cp -a $PWD/tmux_conf.sh ~/.tmux.conf
+cp -a $PWD/tmux_conf ~/.tmux.conf
 cp -a $PWD/git-completion.bash ~/.git-completion.bash
-cp -a $PWD/bash_profile.bash ~/.bash_profile
-cp -a $PWD/work.sh ~/.work
+cp -a $PWD/bash_profile ~/.bash_profile
+cp -a $PWD/work ~/.work
 cp -a $PWD/zsh/zshrc ~/.zshrc
 
 # Install Plugins
