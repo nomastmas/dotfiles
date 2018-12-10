@@ -1,3 +1,4 @@
 # ignore things inside vim bundles
 vim/bundle/*
 vim/after/*
+.DS_Store
