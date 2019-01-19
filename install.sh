@@ -12,11 +12,9 @@ cp -a $PWD/bash_profile ~/.bash_profile
 cp -a $PWD/work ~/.work
 cp -a $PWD/zsh/zshrc ~/.zshrc
 
-# Install Plugins
-if [ -d "~/.vim/bundle/Vundle.vim/" ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-vim +PluginInstall +qall
+# Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
