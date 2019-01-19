@@ -22,6 +22,7 @@ plugins=(
   pyenv
 )
 
+source /usr/local/etc/profile.d/z.sh
 source ~/.alias
 source $ZSH/oh-my-zsh.sh
 
