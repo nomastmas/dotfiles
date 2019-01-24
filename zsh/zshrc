@@ -1,7 +1,5 @@
-# Path to pyenv
 export PYENV_ROOT=$HOME/.pyenv
 
-# If you come from bash you might have to change your $PATH.
 export PATH=$PYENV_ROOT/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -25,6 +23,3 @@ plugins=(
 source /usr/local/etc/profile.d/z.sh
 source ~/.alias
 source $ZSH/oh-my-zsh.sh
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
