@@ -25,6 +25,7 @@ set t_Co=256                            " use 256 colors
 set laststatus=2                        " always status line
 set shortmess=a                         " reduce length of messages
 set whichwrap=<,>,h,l,[,]               " allow keys to cross line boundries
+set term=screen-256color                " for tmux
 
 
 " tabs and spaces
