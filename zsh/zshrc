@@ -20,6 +20,9 @@ plugins=(
   pyenv
 )
 
+# trialspark things
+export COMPOSE_HTTP_TIMEOUT=120
+
 source /usr/local/etc/profile.d/z.sh
 source ~/.alias
 source $ZSH/oh-my-zsh.sh
