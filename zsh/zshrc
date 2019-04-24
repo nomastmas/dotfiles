@@ -20,6 +20,22 @@ plugins=(
   pyenv
 )
 
+# trialspark things
+export COMPOSE_HTTP_TIMEOUT=120
+
+# python + virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/dev
+export VIRTUALENVWRAPPER_PYTHON=/Users/thomastsang/.pyenv/shims/python
+source /usr/local/bin/virtualenvwrapper.sh
+
+# postgres
+export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+
+#nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
 source /usr/local/etc/profile.d/z.sh
 source ~/.alias
 source $ZSH/oh-my-zsh.sh

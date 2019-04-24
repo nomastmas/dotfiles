@@ -1,0 +1,14 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+  d = diff
+	l = log --oneline --all --graph --color --decorate --abbrev-commit
+[core]
+	pager = cat
+[user]
+	email = thomaswtsang@gmail.com
+	name = Thomas Tsang
+[push]
+	default = current
