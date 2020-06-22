@@ -3,3 +3,24 @@
 function pyclean() {
   find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
 }
+
+function upgrade_head() {
+  alembic -x with-data upgrade head
+}
+
+function newbr() {
+  git checkout master
+  git pull --rebase
+  git checkout -b $1
+}
+
+alias scr='rm reports/screenshot*'
+alias pseed='docker-compose exec pilot-flask bash -c "python pilot/scripts/uat/seed.py"'
+alias phead='docker-compose exec pilot-flask bash -c "alembic -x with-data upgrade head"'
+alias rad='radish -b e2e_tests/validation e2e_tests/features --with-traceback --early-exit --user-data "user=Thomas Tsang" --user-data "headless=true" -u "env=local" --tags "test and not wip"'
+alias radhead='radish -b e2e_tests/validation e2e_tests/features --with-traceback --early-exit --user-data "user=Thomas Tsang" --user-data "headless=false" -u "env=local" --tags "test and not wip"'
+alias rtest='radish-test --cover-show-missing --cover-min-percentage=100 -b e2e_tests/validation matches e2e_tests/validation/step-matches.yml'
+alias gpr='git pull --rebase origin master'
+alias rform='radish -b e2e_tests/validation e2e_tests/features/form_fields.feature --with-traceback --early-exit --user-data "user=Thomas Tsang" --user-data "headless=true" -u "env=local" --tags "not wip"'
+alias pi='pipenv install --dev --ignore-pipfile --deploy'
+alias notest='git checkout -- e2e_tests/**/*.feature'

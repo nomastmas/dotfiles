@@ -5,6 +5,11 @@
 	st = status
   d = diff
 	l = log --oneline --all --graph --color --decorate --abbrev-commit
+  p = push
+  pn = push --no-verify
+  s = stash
+  sp = stash pop
+  pom = pull --rebase origin master
 [core]
 	pager = cat
 [user]
