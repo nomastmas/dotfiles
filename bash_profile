@@ -4,14 +4,6 @@ if [ -f ~/.alias ]; then
    . ~/.alias
 fi
 
-if [ -f ~/.work ]; then
-   . ~/.work
-fi
-
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
-fi
-
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
@@ -66,10 +58,4 @@ fi
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
-fi
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
 fi

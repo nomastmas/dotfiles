@@ -1,14 +1,21 @@
+[user]
+	name = nomastmas
+	email = thomaswtsang@gmail.com
+[credential]
+	helper = osxkeychain
+[core]
+	editor = /usr/local/bin/vim
+[url "https://"]
+	insteadOf = git://
 [alias]
 	co = checkout
-	br = branch
-	ci = commit
-	st = status
+	b = branch
+	c = commit
+	s = status
   d = diff
 	l = log --oneline --all --graph --color --decorate --abbrev-commit
-[core]
-	pager = cat
-[user]
-	email = thomaswtsang@gmail.com
-	name = Thomas Tsang
+	p = push
+[pager]
+	diff = false
 [push]
 	default = current
