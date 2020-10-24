@@ -3,8 +3,6 @@
 	email = thomaswtsang@gmail.com
 [credential]
 	helper = osxkeychain
-[remote "origin"]
-#	url = https://github.com/thomaswtsang/tictactoe.git
 [core]
 	editor = /usr/local/bin/vim
 [url "https://"]
