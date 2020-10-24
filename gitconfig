@@ -16,6 +16,8 @@
 	s = status
   d = diff
 	l = log --oneline --all --graph --color --decorate --abbrev-commit
-	p = push origin
+	p = push
 [pager]
 	diff = false
+[push]
+	default = current
